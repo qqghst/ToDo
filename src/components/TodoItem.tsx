@@ -11,9 +11,9 @@ const TodoItem: React.FC<ITodoItem> = (props) => {
 
     return (
         <div>
-            <input type="checkbox" checked={completed} />
+            <input type="checkbox" checked={completed} onChange={() => toggleTodo(id)}/>
             {title}
-            <button>x</button>
+            <button onClick={() => removeTodo(id)}>x</button>
         </div>
     )
 }

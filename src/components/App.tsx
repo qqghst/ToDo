@@ -36,11 +36,18 @@ const App: React.FC = () => {
     }
 
     const removeTodo = (id: number): void => {
-
+        setTodos(todos.filter(todo => todo.id !== id))
     }
 
     const toggleTodo = (id: number): void => {
+        setTodos(todos.map(todo => {
+            if (todo.id !== id) return todo;
 
+            return {
+                ...todo,
+                completed: !todo.completed
+            }
+        }))
     }
 
     return (
